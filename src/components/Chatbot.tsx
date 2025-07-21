@@ -39,12 +39,22 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
     
     // Skills and technologies
     if (message.includes('skill') || message.includes('technology') || message.includes('tech')) {
-      return "Jordan's technical skills include React, TypeScript, JavaScript, Tailwind CSS, React Router, HTML, CSS, Git, and modern web development practices. This website itself is built with React and TypeScript!";
+      return "Jordan's technical skills include React, TypeScript, JavaScript, Tailwind CSS, React Router, HTML, CSS, Git, C#, SQL Server, SpecFlow, and modern web development practices. This website itself is built with React and TypeScript!";
     }
     
     // Experience
     if (message.includes('experience') || message.includes('work') || message.includes('job')) {
-      return "You can find detailed information about Jordan's work experience on the Resume page. Check out the Work page to see specific projects and accomplishments!";
+      return "You can find detailed information about Jordan's work experience on the Resume page. Jordan has experience with both frontend technologies like React and TypeScript, as well as backend development with C# and SQL Server. They thrive in collaborative team environments and enjoy working on complex projects. Check out the Work page to see specific projects and accomplishments!";
+    }
+    
+    // Backend/Database specific
+    if (message.includes('backend') || message.includes('database') || message.includes('sql') || message.includes('server') || message.includes('c#')) {
+      return "Jordan has backend development experience with C# and SQL Server, along with testing expertise using SpecFlow for behavior-driven development. They enjoy working on full-stack applications and database design!";
+    }
+    
+    // Team/Collaboration
+    if (message.includes('team') || message.includes('collaborate') || message.includes('work with others') || message.includes('teamwork')) {
+      return "Jordan thrives in team environments and loves collaborative development! They have experience working with cross-functional teams and believe that the best solutions come from diverse perspectives and open communication.";
     }
     
     // Projects
@@ -118,7 +128,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed bottom-20 right-4 w-80 h-96 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col z-50">
+    <div className="fixed bottom-20 right-24 w-80 h-96 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col z-[9999]">
       {/* Header */}
       <div className="bg-blue-600 text-white p-3 rounded-t-lg flex justify-between items-center">
         <div className="flex items-center space-x-2">

@@ -34,12 +34,22 @@ const Chat: React.FC = () => {
     
     // Skills and technologies
     if (message.includes('skill') || message.includes('technology') || message.includes('tech') || message.includes('programming')) {
-      return "Jordan's technical expertise includes:\n\n🚀 Frontend: React, TypeScript, JavaScript, HTML5, CSS3\n🎨 Styling: Tailwind CSS, responsive design\n🛠️ Tools: Git, React Router, modern development practices\n💡 Concepts: Component-based architecture, state management, user experience design\n\nThis very website showcases these skills in action!";
+      return "Jordan's technical expertise includes:\n\n🚀 Frontend: React, TypeScript, JavaScript, HTML5, CSS3\n🎨 Styling: Tailwind CSS, responsive design\n💾 Backend: C#, SQL Server\n🧪 Testing: SpecFlow for behavior-driven development\n🛠️ Tools: Git, React Router, modern development practices\n💡 Concepts: Component-based architecture, state management, user experience design\n\nThis very website showcases these skills in action!";
     }
     
     // Experience
     if (message.includes('experience') || message.includes('work') || message.includes('job') || message.includes('career')) {
-      return "Jordan has experience in modern web development with a focus on creating user-friendly, responsive applications. You can find detailed information about work history and professional experience on the Resume page. Each role has contributed to building expertise in full-stack development and problem-solving.";
+      return "Jordan has experience in modern web development with a focus on creating user-friendly, responsive applications. Their technical stack includes:\n\n💻 Frontend: React, TypeScript, JavaScript with modern frameworks\n🔧 Backend: C# development and SQL Server database management\n🧪 Testing: SpecFlow for behavior-driven development and automated testing\n👥 Team Work: Thrives in collaborative environments and cross-functional teams\n\nYou can find detailed information about work history and professional experience on the Resume page. Each role has contributed to building expertise in full-stack development, database design, and collaborative problem-solving.";
+    }
+    
+    // Backend/Database specific
+    if (message.includes('backend') || message.includes('database') || message.includes('sql') || message.includes('server') || message.includes('c#') || message.includes('specflow')) {
+      return "Great question about backend development! 🔧\n\nJordan's backend expertise includes:\n💾 C# development for robust server-side applications\n🗃️ SQL Server for database design and management\n🧪 SpecFlow for behavior-driven development (BDD) and automated testing\n📊 Database optimization and query performance\n🔄 API development and integration\n\nThis combination allows for building complete full-stack applications with proper testing coverage and reliable data management!";
+    }
+    
+    // Team/Collaboration
+    if (message.includes('team') || message.includes('collaborate') || message.includes('work with others') || message.includes('teamwork') || message.includes('environment')) {
+      return "Jordan absolutely thrives in team environments! 👥✨\n\nWhat makes Jordan a great team player:\n🤝 Collaborative approach to problem-solving\n💬 Clear communication with technical and non-technical team members\n🎯 Enjoys working on cross-functional teams\n📚 Always willing to learn from others and share knowledge\n🔄 Believes the best solutions come from diverse perspectives\n⚡ Adaptable to different team structures and methodologies\n\nTeamwork and collaboration are essential for delivering quality software, and Jordan brings positive energy and technical expertise to any development team!";
     }
     
     // Projects
@@ -117,8 +127,8 @@ const Chat: React.FC = () => {
 
   const suggestedQuestions = [
     "What are Jordan's technical skills?",
-    "Tell me about their projects",
-    "How can I contact Jordan?",
+    "Tell me about their backend experience",
+    "How does Jordan work in team environments?",
     "What technologies were used for this website?"
   ];
 
