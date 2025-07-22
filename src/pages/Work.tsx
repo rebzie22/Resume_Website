@@ -35,8 +35,8 @@ const projects = [
     {
         title: "Resume Website",
         description: "A personal resume website built with React and TailwindCSS, featuring dark mode and project showcase.",
-        link: "https://github.com/rebzie22/resume-website",
-        github: "https://github.com/rebzie22/resume-website",
+        link: "https://github.com/rebzie22/Resume_Website",
+        github: "https://github.com/rebzie22/Resume_Website",
         image: websiteProjectImg,
         tags: ["React", "TypeScript", "TailwindCSS"],
         type: "web"
@@ -152,24 +152,13 @@ const Work: React.FC = () => {
                                 {/* Action Buttons */}
                                 <div className="flex gap-2 mt-auto">
                                     <a
-                                        href={project.link}
+                                        href={project.type === 'desktop' || project.type === 'web' ? project.github : project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex-1 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-center text-sm"
                                     >
-                                        {project.type === 'library' ? 'View on PyPI' : 
-                                         project.type === 'desktop' ? 'View on GitHub' : 'View Project'}
+                                        {project.type === 'library' ? 'View on PyPI' : 'View on GitHub'}
                                     </a>
-                                    {project.github && (
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition text-center text-sm"
-                                        >
-                                            GitHub
-                                        </a>
-                                    )}
                                 </div>
                             </div>
                         </div>
