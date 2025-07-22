@@ -1,6 +1,7 @@
 import React from 'react';
 import websiteProjectImg from '../assets/websiteproject.png'; // adjust path if needed
 import minesweeperImg from '../assets/minesweeper.png';
+import webhookGuardianImg from '../assets/webhook-guardian.png';
 
 const projects = [
     {
@@ -9,7 +10,7 @@ const projects = [
         link: "https://pypi.org/project/webhook-guardian/",
         github: "https://github.com/rebzie22/webhook-guardian",
         testPypi: "https://test.pypi.org/project/webhook-guardian/0.1.0/",
-        image: "https://via.placeholder.com/400x250/1f2937/ffffff?text=🛡️+Webhook+Guardian",
+        image: webhookGuardianImg,
         tags: ["Python", "Security", "PyPI", "HMAC", "Cryptography", "API"],
         type: "library"
     },
@@ -50,66 +51,8 @@ const Work: React.FC = () => {
             <div className="max-w-5xl mx-auto px-4">
                 <h1 className="text-4xl font-bold mb-8 text-center">My Projects</h1>
                 
-                {/* Featured Project */}
-                <div className="mb-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white">
-                    <div className="flex flex-col md:flex-row items-center gap-6">
-                        <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-2">
-                                <span className="text-2xl">🛡️</span>
-                                <h2 className="text-3xl font-bold">Webhook Guardian</h2>
-                                <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">LIVE ON PyPI</span>
-                            </div>
-                            <p className="text-lg mb-4 text-blue-100">
-                                A production-ready Python security library for webhook validation. Features HMAC verification, 
-                                replay attack prevention, rate limiting, and comprehensive security measures. Developed with 
-                                professional practices including Test PyPI validation before production release.
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["Python", "Security", "PyPI", "HMAC", "Cryptography", "Testing"].map((tag, idx) => (
-                                    <span key={idx} className="bg-white/20 text-white px-3 py-1 rounded-full text-sm">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                            <div className="flex flex-wrap gap-3">
-                                <a
-                                    href="https://pypi.org/project/webhook-guardian/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition text-sm"
-                                >
-                                    Production PyPI
-                                </a>
-                                <a
-                                    href="https://test.pypi.org/project/webhook-guardian/0.1.0/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-white/20 text-white px-4 py-2 rounded-lg font-semibold hover:bg-white/30 transition text-sm"
-                                >
-                                    Test PyPI
-                                </a>
-                                <a
-                                    href="https://github.com/rebzie22/webhook-guardian"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="border border-white text-white px-4 py-2 rounded-lg font-semibold hover:bg-white/10 transition text-sm"
-                                >
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                        <div className="text-center">
-                            <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                                <div className="text-4xl mb-2">📦</div>
-                                <div className="text-sm text-blue-100">Published Package</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 className="text-2xl font-bold mb-6">Other Projects</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.filter(project => project.title !== "Webhook Guardian 🛡️").map((project, idx) => (
+                    {projects.map((project, idx) => (
                         <div key={idx} className="bg-gray-100 dark:bg-gray-900 rounded-lg shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300">
                             <img 
                                 src={project.image} 

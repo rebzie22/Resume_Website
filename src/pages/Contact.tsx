@@ -1,4 +1,6 @@
+
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 interface ContactForm {
   name: string;
@@ -16,6 +18,7 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -25,19 +28,41 @@ const Contact: React.FC = () => {
     }));
   };
 
+  const SERVICE_ID = 'service_n1tjswp';
+  const TEMPLATE_ID = 'template_feklbel';
+  const PUBLIC_KEY = 'JnN_UMAvPeWJs1jZh';
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission (you can replace this with actual form handling)
-    setTimeout(() => {
+    setSubmitStatus('idle');
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      );
       setSubmitStatus('success');
-      setIsSubmitting(false);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
+      setErrorMessage(null);
+    } catch (error: any) {
+      setSubmitStatus('error');
+      setErrorMessage(error?.text || error?.message || 'Unknown error');
+    } finally {
+      setIsSubmitting(false);
       // Reset status after 5 seconds
-      setTimeout(() => setSubmitStatus('idle'), 5000);
-    }, 2000);
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        setErrorMessage(null);
+      }, 5000);
+    }
   };
 
   const contactInfo = [
@@ -178,6 +203,19 @@ const Contact: React.FC = () => {
                   </svg>
                   Thank you! Your message has been sent successfully. I'll get back to you soon!
                 </div>
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-100 dark:bg-red-900 border border-red-400 text-red-700 dark:text-red-300 rounded-lg">
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10A8 8 0 11.001 10 8 8 0 0118 10zm-7-4a1 1 0 10-2 0v4a1 1 0 002 0V6zm-1 8a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
+                  </svg>
+                  Oops! Something went wrong. Please try again later.
+                </div>
+                {errorMessage && (
+                  <div className="mt-2 text-xs text-red-700 dark:text-red-300 break-all">{errorMessage}</div>
+                )}
               </div>
             )}
 

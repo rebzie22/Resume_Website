@@ -88,6 +88,18 @@ const Resume: React.FC = () => {
                         <p className="text-sm text-gray-600 dark:text-gray-400">2013</p>
                     </div>
                     {/* Add more education as needed */}
+                    <div className="mt-4">
+                        <h3 className="font-bold">Coursera Specialization Certificate</h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">IBM AI Developer, 2024</p>
+                        <a
+                            href="https://www.coursera.org/account/accomplishments/specialization/KCET3KA22P1Z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 dark:text-blue-400 underline text-sm"
+                        >
+                            View Certificate
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
