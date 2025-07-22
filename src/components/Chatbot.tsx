@@ -39,7 +39,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
     
     // Skills and technologies
     if (message.includes('skill') || message.includes('technology') || message.includes('tech')) {
-      return "Jordan's technical skills include React, TypeScript, JavaScript, Tailwind CSS, React Router, HTML, CSS, Git, C#, SQL Server, SpecFlow, and modern web development practices. This website itself is built with React and TypeScript!";
+      return "Jordan's technical skills include React, TypeScript, JavaScript, Tailwind CSS, React Router, HTML, CSS, Git, C#, SQL Server, SpecFlow, Python (security libraries), HMAC cryptography, and modern web development practices. This website itself is built with React and TypeScript! They've also published a Python security library called Webhook Guardian on PyPI.";
     }
     
     // Experience
@@ -49,7 +49,12 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
     
     // Backend/Database specific
     if (message.includes('backend') || message.includes('database') || message.includes('sql') || message.includes('server') || message.includes('c#')) {
-      return "Jordan has backend development experience with C# and SQL Server, along with testing expertise using SpecFlow for behavior-driven development. They enjoy working on full-stack applications and database design!";
+      return "Jordan has strong backend development experience with C# and SQL Server, along with testing expertise using SpecFlow for behavior-driven development. They also work with Python for security applications - they've published a Python security library called Webhook Guardian on PyPI! They enjoy working on full-stack applications and database design.";
+    }
+    
+    // Security specific
+    if (message.includes('security') || message.includes('webhook') || message.includes('hmac') || message.includes('crypto')) {
+      return "Jordan has a strong focus on security! They've developed and published Webhook Guardian, a Python security library on PyPI that handles webhook validation with HMAC signature verification, replay attack prevention, rate limiting, and IP whitelisting. This demonstrates their understanding of cryptography and secure development practices. They're passionate about helping other developers build more secure applications!";
     }
     
     // Team/Collaboration
@@ -58,8 +63,8 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
     }
     
     // Projects
-    if (message.includes('project') || message.includes('portfolio') || message.includes('work')) {
-      return "This resume website is one of Jordan's projects! It demonstrates skills in React, TypeScript, Tailwind CSS, and responsive design. Visit the Work page to see more projects and detailed descriptions.";
+    if (message.includes('project') || message.includes('portfolio') || message.includes('work') || message.includes('webhook') || message.includes('python') || message.includes('library')) {
+      return "Jordan has some impressive projects! The most notable is Webhook Guardian 🛡️, a Python security library published on PyPI that helps developers validate webhooks safely with HMAC verification, replay attack prevention, and rate limiting. This resume website is also a great example of their React/TypeScript skills, featuring dark mode, responsive design, and this interactive chatbot! Visit the Work page to see more projects and detailed descriptions.";
     }
     
     // Education
@@ -88,7 +93,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
     }
     
     // Default response with suggestions
-    return "I'd be happy to help! You can ask me about:\n• Jordan's technical skills and technologies\n• Work experience and background\n• Projects and portfolio\n• Education and certifications\n• How to get in contact\n\nWhat would you like to know?";
+    return "I'd be happy to help! You can ask me about:\n• Jordan's technical skills and technologies\n• Work experience and background\n• Projects and portfolio (including Webhook Guardian!)\n• Security expertise and Python development\n• Education and certifications\n• Collaboration style and teamwork\n• How to get in contact\n\nWhat would you like to know?";
   };
 
   const handleSendMessage = async () => {

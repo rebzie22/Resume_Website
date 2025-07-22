@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
                 <div className="space-x-4 flex items-center">
                     <Link to="/" className="text-gray-300 hover:text-white">Home</Link>
                     <Link to="/resume" className="text-gray-300 hover:text-white">Resume</Link>
-                    <Link to="/work" className="text-gray-300 hover:text-white">Work</Link>
+                    <Link to="/work" className="text-gray-300 hover:text-white">Projects</Link>
                     <Link to="/chat" className="text-gray-300 hover:text-white">Chat</Link>
                     <Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link>
                     <DarkModeToggle />
