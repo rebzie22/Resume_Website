@@ -80,29 +80,7 @@ const Resume: React.FC = () => {
                         {/* Add more jobs as needed */}
                     </div>
                 </div>
-                <div className="mb-6">
-                    <h2 className="text-xl font-semibold mb-2">Notable Projects</h2>
-                    <div className="space-y-4">
-                        <div className="border-l-4 border-blue-500 pl-4">
-                            <div className="flex items-center gap-2 mb-1">
-                                <h3 className="font-bold">Webhook Guardian 🛡️</h3>
-                                <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded-full">Published on PyPI</span>
-                            </div>
-                            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Python Security Library</p>
-                            <p className="text-sm mb-2">
-                                A comprehensive security-focused Python library for webhook validation featuring HMAC signature verification, 
-                                replay attack prevention, rate limiting, and IP whitelisting. Developed using professional practices including 
-                                Test PyPI validation before production release. Published as an open-source package on PyPI.
-                            </p>
-                            <div className="flex gap-2 text-xs">
-                                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">Python</span>
-                                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">Security</span>
-                                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">Cryptography</span>
-                                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">PyPI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/* Notable Projects section removed as projects are now showcased elsewhere */}
                 <div className="mb-6">
                     <h2 className="text-xl font-semibold mb-2">Education</h2>
                     <div>

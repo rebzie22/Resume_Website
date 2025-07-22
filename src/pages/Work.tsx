@@ -16,11 +16,12 @@ const projects = [
     },
     {
         title: "Classic Games Collection 🎮",
-        description: "A modular C# Windows Forms application featuring a unified launcher and multiple classic games (Minesweeper, Snake, and more). Demonstrates OOP, plugin architecture, and desktop UI/UX design. A flagship portfolio project.",
+        description: "A modular C# Windows Forms application featuring a unified launcher and multiple classic games (Minesweeper, Snake, and more). Demonstrates OOP, plugin architecture, and desktop UI/UX design.",
         link: "https://github.com/rebzie22/classic-games-collection",
         github: "https://github.com/rebzie22/classic-games-collection",
         image: require('../assets/class-games-collection.png'),
         tags: ["C#", ".NET", "Windows Forms", "Game Development", "OOP", "Launcher", "Portfolio"],
+        download: "https://github.com/rebzie22/classic-games-collection/releases/download/v.1.0.0/classic-games-collection.zip",
         type: "desktop"
     },
     {
@@ -118,8 +119,24 @@ const Work: React.FC = () => {
                                     `w-full h-48 object-contain bg-gray-50 dark:bg-gray-700`
                                 } 
                             />
+                            {/* Download button now only appears below the title */}
                             <div className="p-4 flex-1 flex flex-col">
                                 <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+                                {project.download && (
+                                    <div className="flex justify-center mb-2">
+                                        <a
+                                            href={project.download}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition text-center text-sm font-semibold shadow"
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4m-9 8h10" />
+                                            </svg>
+                                            Download
+                                        </a>
+                                    </div>
+                                )}
                                 <p className="mb-3 flex-1 text-gray-700 dark:text-gray-300">{project.description}</p>
                                 
                                 {/* Tags */}
