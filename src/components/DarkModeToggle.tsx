@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 const DarkModeToggle: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const stored = localStorage.getItem('darkMode');
+    return stored === 'true';
+  });
 
   useEffect(() => {
     if (darkMode) {
@@ -9,6 +12,7 @@ const DarkModeToggle: React.FC = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    localStorage.setItem('darkMode', darkMode.toString());
   }, [darkMode]);
 
   return (
